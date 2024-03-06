@@ -1,0 +1,55 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsfonts}
+\usetheme{Copenhagen}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\title{Construction of $\mathbb{Z}$}
+\begin{document}
+\maketitle
+
+\begin{frame} {Assumptions}
+\begin{itemize}
+    \item There exists a set $\mathbb{N}=\{0, 1, 2, ...\}$.
+    \item There exists $+: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, +)$ forms a commutative monoid with identity $0 \in \mathbb{N}$. $\footnote{We will use infix notation for $+$}$
+    \item The function $succ: \mathbb{N} \rightarrow \mathbb{N^+}, n \mapsto n + 1$ is injective.
+\end{itemize}
+\end{frame}
+
+\begin{frame} {Goals}
+\begin{itemize}
+    \item Constructing the set $\mathbb{Z}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame} {Defining the set $\mathbb{Z}$}
+    \begin{block}{Idea}
+        We want $ \overbrace{z}^{\in \; \mathbb{Z}} \equiv \overbrace{(a, b)}^{\in \; \mathbb{N} \times \mathbb{N}} \Leftrightarrow z = a-b$.\\
+        Issue: This representation is not unique. E.g: $0 = 1-1 = 2 - 2 = ....$
+    \end{block}
+
+    \begin{block}{Definition: $\sim$}
+    $(a, b) \sim (c, d) : \Leftrightarrow a+d=b+c$
+    \end{block}
+
+    \begin{Lemma}
+        $\sim$ is an equivalence relation
+    \end{Lemma}
+\end{frame}
+
+\begin{frame}
+    \begin{proof}
+        Reflexivity:\\ $\forall (a, b) \in \mathbb{N} \times \mathbb{N}: a+b = b+a$.\\
+        Symmetry:\\ $(a, b) \sim (c, d) \Rightarrow c+b = b+c\underset{(a, b) \sim (c, d)}{=}a+d=d+a \Rightarrow (c, d) \sim (a, b)$.\\
+        Transitivity: \\
+        Let $(a, b) \sim (c, d), (c, d) \sim (e, f)$. Then \\
+        $succ^{c+d}(a+f)= \underbrace{a+d}_{= b+c}+\underbrace{c+f}_{= d+e} = b+c+d+e=succ^{c+d}(b+e)$ \\
+        $\underset{\text{succ injective}}{\Rightarrow} a+f=b+e$
+        $\Rightarrow (a, b) \sim (e, f)$
+    \end{proof}
+\end{frame}
+
+\begin{block}{Definition $\mathbb{Z}$}
+    $\mathbb{Z} := \{[(a, b)] \mid a,b \in \mathbb{}\}$
+\end{block}
+
+\end{document}
