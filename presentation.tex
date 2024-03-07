@@ -18,6 +18,7 @@
 \begin{frame} {Goals}
 \begin{itemize}
     \item Constructing the set $\mathbb{Z}$.
+    \item Defining $+:\mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ and $\cdot: \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$$\footnote{We will use infix notation for $+$ and $\cdot$}$
 \end{itemize}
 \end{frame}
 
@@ -36,7 +37,7 @@
     \end{Lemma}
 \end{frame}
 
-\begin{frame}
+\begin{frame} {Defining the set $\mathbb{Z}$}
     \begin{proof}
         Reflexivity:\\ $\forall (a, b) \in \mathbb{N} \times \mathbb{N}: a+b = b+a$.\\
         Symmetry:\\ $(a, b) \sim (c, d) \Rightarrow c+b = b+c\underset{(a, b) \sim (c, d)}{=}a+d=d+a \Rightarrow (c, d) \sim (a, b)$.\\
@@ -48,8 +49,21 @@
     \end{proof}
 \end{frame}
 
-\begin{block}{Definition $\mathbb{Z}$}
-    $\mathbb{Z} := \{[(a, b)] \mid a,b \in \mathbb{}\}$
+\begin{frame} {Defining the set $\mathbb{Z}$}
+\begin{block}{Definition: $\mathbb{Z}$}
+    $\mathbb{Z} := \{[(a, b)] \mid a,b \in \mathbb{N}\}$
 \end{block}
+\end{frame}
+
+\begin{frame} {Defining $+$ and $\cdot$}
+    \begin{block} {Definition : $+$}
+        $[a, b] + [c, d] := [a+c, b+d]$
+    \end{block} 
+
+    \begin{block} {Remark}
+        This gives us the usual Addition on $\mathbb{Z}$: $y = a-b, z = c - d \Rightarrow y+z = a+c - (b+d)$
+    \end{block}
+    %well-defined, vertraeglichkeit
+\end{frame}
 
 \end{document}
