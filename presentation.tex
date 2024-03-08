@@ -20,6 +20,7 @@
 \begin{itemize}
     \item Constructing the set $\mathbb{Z}$.
     \item Defining $+:\mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ and $\cdot: \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ $\footnote{We will use infix notation for $+$ and $\cdot$}$
+    \item Showing $(\mathbb{Z}, +, \cdot)$ is a commutative ring with multiplicative identity $1$.
 \end{itemize}
 \end{frame}
 
@@ -56,7 +57,7 @@
 \end{block}
 \end{frame}
 
-\begin{frame}{Defining $+$ and $\cdot$}
+\begin{frame}{Defining $+$}
     \begin{block} {Remark}
         $(\mathbb{N} \times \mathbb{N}, +_2)$ as direct product of $(\mathbb{N}, +)$ with itself is a semigroup.
     \end{block}
@@ -72,13 +73,13 @@
     \end{proof}
 \end{frame}
 
-\begin{frame} {Defining $+$ and $\cdot$}
+\begin{frame} {Defining $+$}
     \begin{block} {Corollary: Definition of $+$}
         $[(a, b)] +_3 [(c, d)] := [(a, b) +_2 (c, d)] = [(a+c, b+d)]$ is well-defined and makes $(\mathbb{Z}, +_3)$ a semigroup.
     \end{block}
 
     \begin{block} {Remark}
-        This gives us the usual Addition on $\mathbb{Z}$: $y = a-b, z = c - d \Rightarrow y+z = a+c - (b+d)$ $\footnote{From now on we will not distuingish between $+, +_2$ and $+_3$}$
+        This gives us the usual Addition on $\mathbb{Z}$: $y = a-b, z = c - d \Rightarrow y+z = a+c - (b+d)$ $\footnote{From now on we will not distinguish between $+, +_2$ and $+_3$}$
     \end{block}
 
     \begin{block} {Lemma}
@@ -86,10 +87,10 @@
     \end{block}
 \end{frame}
 
-\begin{frame} {Defining $+$ and $\cdot$}
+\begin{frame} {Defining $+$}
     \begin{proof}
         Commutativity: $\forall [(a,b)], [(c, d)] \in \mathbb{Z}:$ \\
-        $ [(a, b)] + [(c, d)] = [(a+c), (b+d)] = [(c+a, d+b)] = [(c, d)] + [(a, b)]$ \\ 
+        $ [(a, b)] + [(c, d)] = [(a+c, b+d)] = [(c+a, d+b)] = [(c, d)] + [(a, b)]$ \\ 
         $\newline$ 
         Neutral Element: $\forall [(a, b)] \in \mathbb{Z}: [(a, b)] + [(0, 0)] = [(a, b)]$ \\
         $\newline$
