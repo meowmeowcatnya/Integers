@@ -1,10 +1,11 @@
 \documentclass[aspectratio=169]{beamer}
 \usepackage{amsfonts}
+\usepackage{faktor}
 \usetheme{Copenhagen}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{headline}{}
-\title{Construction of $\mathbb{Z}$}
 \begin{document}
+\title{Construction of $\mathbb{Z}$}
 \maketitle
 
 \begin{frame} {Assumptions}
@@ -18,7 +19,7 @@
 \begin{frame} {Goals}
 \begin{itemize}
     \item Constructing the set $\mathbb{Z}$.
-    \item Defining $+:\mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ and $\cdot: \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$$\footnote{We will use infix notation for $+$ and $\cdot$}$
+    \item Defining $+:\mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ and $\cdot: \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ $\footnote{We will use infix notation for $+$ and $\cdot$}$
 \end{itemize}
 \end{frame}
 
@@ -51,19 +52,49 @@
 
 \begin{frame} {Defining the set $\mathbb{Z}$}
 \begin{block}{Definition: $\mathbb{Z}$}
-    $\mathbb{Z} := \{[(a, b)] \mid a,b \in \mathbb{N}\}$
+    $\mathbb{Z} :=  \mathbb{N} \times \mathbb{N} / \sim \;=  \{[(a, b)] \mid a,b \in \mathbb{N}\}$
 \end{block}
 \end{frame}
 
+\begin{frame}{Defining $+$ and $\cdot$}
+    \begin{block} {Remark}
+        $(\mathbb{N} \times \mathbb{N}, +_2)$ as direct product of $(\mathbb{N}, +)$ with itself is a semigroup.
+    \end{block}
+
+    \begin{block} {Lemma}
+        $\sim$ is comptabile with $+_2$.
+    \end{block}
+
+    \begin{proof}
+        Let $(a, b) \sim (a', b'), (c, d) \sim (c', d')$. Then
+        $(a+c) + (b'+d') = \underbrace{(a+b')}_{=b+a'} + \underbrace{(c+d')}_{=d+c'} = (b+d) + (a'+c')$ \\
+        $\Rightarrow (a, b) +_2 (c, d) = (a+c, b+d) \sim (a'+c',b'+d') = (a', b') +_2 (c', d')$
+    \end{proof}
+\end{frame}
+
 \begin{frame} {Defining $+$ and $\cdot$}
-    \begin{block} {Definition : $+$}
-        $[a, b] + [c, d] := [a+c, b+d]$
-    \end{block} 
+    \begin{block} {Corollary: Definition of $+$}
+        $[(a, b)] +_3 [(c, d)] := [(a, b) +_2 (c, d)] = [(a+c, b+d)]$ is well-defined and makes $(\mathbb{Z}, +_3)$ a semigroup.
+    \end{block}
 
     \begin{block} {Remark}
-        This gives us the usual Addition on $\mathbb{Z}$: $y = a-b, z = c - d \Rightarrow y+z = a+c - (b+d)$
+        This gives us the usual Addition on $\mathbb{Z}$: $y = a-b, z = c - d \Rightarrow y+z = a+c - (b+d)$ $\footnote{From now on we will not distuingish between $+, +_2$ and $+_3$}$
     \end{block}
-    %well-defined, vertraeglichkeit
+
+    \begin{block} {Lemma}
+        $(\mathbb{Z}, +)$ is an abelian group.
+    \end{block}
+\end{frame}
+
+\begin{frame} {Defining $+$ and $\cdot$}
+    \begin{proof}
+        Commutativity: $\forall [(a,b)], [(c, d)] \in \mathbb{Z}:$ \\
+        $ [(a, b)] + [(c, d)] = [(a+c), (b+d)] = [(c+a, d+b)] = [(c, d)] + [(a, b)]$ \\ 
+        $\newline$ 
+        Neutral Element: $\forall [(a, b)] \in \mathbb{Z}: [(a, b)] + [(0, 0)] = [(a, b)]$ \\
+        $\newline$
+        Inverses: $\forall [(a,b)] \in \mathbb{Z}: [(a, b)] + [(b, a)] = [\underset{\sim (0, 0)}{(a+b, b+a)}] = [(0, 0)]$
+    \end{proof}
 \end{frame}
 
 \end{document}
