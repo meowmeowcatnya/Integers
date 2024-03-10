@@ -11,8 +11,9 @@
 \begin{frame} {Assumptions}
 \begin{itemize}
     \item There exists a set $\mathbb{N}=\{0, 1, 2, ...\}$.
-    \item There exists $+: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, +)$ forms a commutative monoid with identity $0 \in \mathbb{N}$. $\footnote{We will use infix notation for $+$}$
+    \item There exists $+: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, +)$ forms a commutative monoid with identity $0$. $\footnote{We will use infix notation for $+$}$
     \item The function $succ: \mathbb{N} \rightarrow \mathbb{N^+}, n \mapsto n + 1$ is injective.
+    \item There exists $\cdot: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, \cdot)$ is a commutative monoid with identity $1$
 \end{itemize}
 \end{frame}
 
@@ -127,6 +128,48 @@
 \end{frame}
 
 \begin{frame} {Definition of $\cdot$}
+    \begin{block}{Idea}
+        We want $(a-b)(c-d) = ac-ad-bc+bd=ac+bd-(ad+bc)$
+    \end{block}
+
+    \begin{block}{Definition: $\cdot$}
+        $[(a, b)] \cdot [(c, d)] := [(ac +bd, ad+bc)] = [(ca+db, da+cb)] = [(c, d)] \cdot [(a, b)]$
+    \end{block}
+
+    \begin{block}{$\cdot$ is well-defined}
+        Let $[(a, b)]= [(a', b')], [(c, d)]$. We have \\
+        $[(a', b')] \cdot [(c, d)] = [(a'c+b'd, a'd+b'c)] = [\underset{\sim (ac, bc)}{(a'c, b'c)}]+[\underset{\sim (bd, ad)}{(b'd, a'd)]} = [(ac+bd, ad+bc)]$ \\
+        By symmetry $\cdot$ is also invariant under changes of representative in the $2$nd argument.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Definition of $\cdot$}
+    \begin{block} {Lemma}
+        $(\mathbb{Z}, \cdot)$ is a commutative monoid.
+    \end{block}
+
+    \begin{proof}
+        Associativity: $\forall [(a,b)], [(c,d)], [(e, f)] \in \mathbb{Z}$: \\
+        $[(a, b)] \cdot ([(c, d)] \cdot [(e,f)]) = [(a,b)] \cdot [(ce+df, cf+de)]$ \\
+        $=[(e(ac+bd)+f(ad+bc), f(ac+bd)+e(ad+bc))]$ \\
+        $= [(ac+bd, ad+bc)] \cdot [(e, f)]$ \\
+        $= ([(a,b)] \cdot [(c,d)])\cdot [(e, f)]$\\
+        $\newline$
+        Neutral Element: $\forall [(a,b)] \in \mathbb{Z}$:\\
+        $[(a, b)] \cdot [(1, 0)] = [(a \cdot 1 + b \cdot 0, a \cdot 0 + b \cdot 1)] = [(a, b)]$
+    \end{proof}
+\end{frame}
+
+\begin{frame}{$\mathbb{Z}$ is an integral domain}
+    \begin{block}{Corollary}
+        $\mathbb{Z}$ is a commutative ring with identity.
+    \end{block}
+
+    \begin{proof}
+        Distributivity:
+    \end{proof}
+
+    
 \end{frame}
 
 \end{document}
