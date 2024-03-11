@@ -13,7 +13,9 @@
     \item There exists a set $\mathbb{N}=\{0, 1, 2, ...\}$.
     \item There exists $+: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, +)$ forms a commutative monoid with identity $0$. $\footnote{We will use infix notation for $+$}$
     \item The function $succ: \mathbb{N} \rightarrow \mathbb{N^+}, n \mapsto n + 1$ is injective.
-    \item There exists $\cdot: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, \cdot)$ is a commutative monoid with identity $1$
+    \item There exists $\cdot: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, \cdot)$ is a commutative monoid with identity $1$ 
+    \item The functions $\varphi_k: \mathbb{N} \rightarrow \{mathbb{N}, x \mapsto kx$ are injective for $k \in \mathbb{N}^+$
+    \item There exists the usual order on $\mathbb{N}$
 \end{itemize}
 \end{frame}
 
@@ -166,10 +168,33 @@
     \end{block}
 
     \begin{proof}
-        Distributivity:
+        $(\mathbb{Z}, +)$ is an abelian group and $(\mathbb{Z}, \cdot)$ is a commutative monoid. We also have:\\
+        $\newline$
+        Distributivity: $\forall [(a, b)], [(c, d)], [(e, f)]$:\\
+        $[(a, b)]\cdot ([(c, d)] + [(e, f)]) = [(a(c+e) + b(d +f), a(d+f)+b(c+e))] = [(a, b)] \cdot [(c, d)] + [(a, b)] \cdot [(e, f)]$
     \end{proof}
+\end{frame}
 
-    
+\begin{frame} {$\mathbb{Z}$ is an integral doman}
+    \begin{block}{Corollay}
+        $\mathbb{Z}$ is an integral domain
+    \end{block}
+
+    \begin{proof}
+        Let $[(a, b)] [(c, d)] = [(0, 0)], [(a, b)] \ne [(0, 0)]$\\
+        $\Rightarrow ac+bd = ad+bc$\\
+        $\Rightarrow (a-b)c = (a-b)d$\\
+        Assume $a > b$, so $a- b= k$ for some $k \ge 1$\\ 
+        $\Rightarrow kc = kd \underset{\substack{\varphi_k: \mathbb{N} \rightarrow \mathbb{N}, x \mapsto kx \\ \text{injective for} \; k \in \mathbb{N}^+}}{\Rightarrow} c = d \Rightarrow [(c, d)] = [(0, 0)]$ \\
+        $\newline$
+        If $a < b$, then for $k := a-b$ the map $\varphi_{-k}: \mathbb{N} \rightarrow \mathbb{N} x \mapsto (-k) x$ is injective.
+    \end{proof}
+\end{frame}
+
+\begin{frame} {Ordering on $\mathbb{Z}$}
+    \begin{block}{Definition}
+        For $a, b \in \mathbb{Z}$ we define $a \le b: \Leftrightarrow b-a \in \mathbb{N}$
+    \end{block}
 \end{frame}
 
 \end{document}
