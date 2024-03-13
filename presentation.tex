@@ -15,7 +15,7 @@
     \item The function $succ: \mathbb{N} \rightarrow \mathbb{N^+}, n \mapsto n + 1$ is injective.
     \item There exists $\cdot: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, \cdot)$ is a commutative monoid with identity $1$ 
     \item The functions $\varphi_k: \mathbb{N} \rightarrow \{mathbb{N}, x \mapsto kx$ are injective for $k \in \mathbb{N}^+$
-    \item There exists the usual order on $\mathbb{N}$
+    \item There exists the usual total order $\le$ on $\mathbb{N}$
 \end{itemize}
 \end{frame}
 
@@ -24,6 +24,7 @@
     \item Constructing the set $\mathbb{Z}$.
     \item Defining $+:\mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ and $\cdot: \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ $\footnote{We will use infix notation for $+$ and $\cdot$}$
     \item Showing $(\mathbb{Z}, +, \cdot)$ is a commutative ring with multiplicative identity $1$.
+    \item Showing $\le$ is a total order on $\mathbb{Z}$
 \end{itemize}
 \end{frame}
 
@@ -139,7 +140,7 @@
     \end{block}
 
     \begin{block}{$\cdot$ is well-defined}
-        Let $[(a, b)]= [(a', b')], [(c, d)]$. We have \\
+        Let $[(a, b)]= [(a', b')]$. We have \\
         $[(a', b')] \cdot [(c, d)] = [(a'c+b'd, a'd+b'c)] = [\underset{\sim (ac, bc)}{(a'c, b'c)}]+[\underset{\sim (bd, ad)}{(b'd, a'd)]} = [(ac+bd, ad+bc)]$ \\
         By symmetry $\cdot$ is also invariant under changes of representative in the $2$nd argument.
     \end{block}
@@ -203,12 +204,12 @@
 
 \begin{frame}{Ordering on $\mathbb{Z}$}
     \begin{proof}
-        Reflexivity: $\forall [(a, b)] \in \mathbb{Z}: [(a, b)] - [(a, b)] = [(0, 0)] \in \mathbb{N}$\\
+        Reflexivity: $\forall a \in \mathbb{Z}: a - a = 0 \in \mathbb{N}$\\
         $\newline$
-        Antisymmetry: Let $[(a, b)] \le [(c, d)], [(c, d)] \le [(a, b)]$. \\
-        $\Rightarrow \exists k_1, k_2 \in \mathbb{N}: a+d=b+c+k_1, \; b+c=a+d+k_2$.\\
-        $\Rightarrow k_1=a+d-(b+c)=-k_2$\\
-        $\Rightarrow k_1 = k_2 = 0 \Rightarrow [(a, b)] = [(c, d)]$\\
+        Antisymmetry: Let $a \le b, b \le a$. \\
+        $\Rightarrow \exists n_1, n_2 \in \mathbb{N}: b - a = n_1, \; a-b=n_2$.\\
+        $\Rightarrow n_1=b-a = -(a-b)=-n_2$\\
+        $\Rightarrow n_1 = b_2 = 0 \Rightarrow a = b$\\
         $\newline$
         Transitivity: Let $a \le b, b\le c$. \\
         $\Rightarrow \exists k_1, k_2 \in \mathbb{N}: a+k_1 = b, \; b+k_2 = c$\\
@@ -221,6 +222,17 @@
     \begin{lemma}
         $\le$ is a total order.
     \end{lemma}
+
+    \begin{proof}
+        Let $a, b, c, d \in \mathbb{N}, [(a, b)] \not \le [(c, d)]$.\\
+        $\Rightarrow [(c, d)] - [(a, b)] = [(b+c, a+d)] \not \in \mathbb{N}$\\
+        $\Rightarrow \forall n \in \mathbb{N}: [(n, 0)] \not = [(b+c, a+d)]$\\
+        $\Rightarrow \forall n \in \mathbb{N}: a+d+n \not = b+c$\\
+        $\Rightarrow b+c \le a+d$\\
+        $\Rightarrow a+d - (b+c) \in \mathbb{N}$\\
+        $\Rightarrow [(a, b)] - [(c, d)] = [(a+d, b+c)] = [(a+d-(b+c), 0)] \in \mathbb{N}$\\
+        $\Rightarrow [(c, d)] \le [(a, b)]]$
+    \end{proof}
 \end{frame}
 
 \end{document}
