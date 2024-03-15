@@ -14,7 +14,7 @@
     \item There exists $+: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, +)$ forms a commutative monoid with identity $0$. $\footnote{We will use infix notation for $+$}$
     \item The function $succ: \mathbb{N} \rightarrow \mathbb{N^+}, n \mapsto n + 1$ is injective.
     \item There exists $\cdot: \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$ such that $(\mathbb{N}, \cdot)$ is a commutative monoid with identity $1$ 
-    \item The functions $\varphi_k: \mathbb{N} \rightarrow \{mathbb{N}, x \mapsto kx$ are injective for $k \in \mathbb{N}^+$
+    \item The functions $\varphi_k: \mathbb{N} \rightarrow \mathbb{N}, x \mapsto kx$ are injective for $k \in \mathbb{N}^+$
     \item There exists the usual total order $\le$ on $\mathbb{N}$
 \end{itemize}
 \end{frame}
@@ -25,6 +25,7 @@
     \item Defining $+:\mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ and $\cdot: \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$ $\footnote{We will use infix notation for $+$ and $\cdot$}$
     \item Showing $(\mathbb{Z}, +, \cdot)$ is a commutative ring with multiplicative identity $1$.
     \item Showing $\le$ is a total order on $\mathbb{Z}$
+    \item Constructing the set $\mathbb{Q}$
 \end{itemize}
 \end{frame}
 
@@ -233,6 +234,22 @@
         $\Rightarrow [(a, b)] - [(c, d)] = [(a+d, b+c)] = [(a+d-(b+c), 0)] \in \mathbb{N}$\\
         $\Rightarrow [(c, d)] \le [(a, b)]]$
     \end{proof}
+\end{frame}
+
+\begin{frame}{Definition of $\mathbb{Q}$}
+    \begin{block}{Definition}
+        For $(a, b), (c, d) \in \mathbb{Z} \times (\mathbb{Z} \setminus \{0\})$ we define $(a, b) \sim (c, d): \Leftrightarrow ad=bc$  
+    \end{block}
+
+    \begin{block}{$\sim$ is an equivalence relation}
+        Transitivity: $\forall (a, b) \in \mathbb{Z} \times (\mathbb{Z} \setminus \{0\}): ab=ba$\\
+        Symmetry: Let $(a,b) \sim (c,d)$\\
+        $\Rightarrow cb=bc=ad=da \Rightarrow (c, d) \sim (a, b)$\\
+        Transitivity: Let $(a, b) \sim (c, d), (c, d) \sim (e, f)$\\
+        If $c = 0$ then $a=e=0$, so $af=0=be$, hence $(a, b) \sim (e, f)$\\
+        Else $cd \not = 0$, therefore: \\
+        $cdaf=cdbe \Rightarrow af=be \Rightarrow (a, b) \sim (e, f)$  
+    \end{block}
 \end{frame}
 
 \end{document}
