@@ -246,10 +246,33 @@
         Symmetry: Let $(a,b) \sim (c,d)$\\
         $\Rightarrow cb=bc=ad=da \Rightarrow (c, d) \sim (a, b)$\\
         Transitivity: Let $(a, b) \sim (c, d), (c, d) \sim (e, f)$\\
-        If $c = 0$ then $a=e=0$, so $af=0=be$, hence $(a, b) \sim (e, f)$\\
+        If $c = 0$ then $a=e=0 \Rightarrow af=0=be \Rightarrow (a, b) \sim (e, f)$\\
         Else $cd \not = 0$, therefore: \\
         $cdaf=cdbe \Rightarrow af=be \Rightarrow (a, b) \sim (e, f)$  
     \end{block}
+\end{frame}
+
+\begin{frame}{Definition of $\mathbb{Q}$}
+    \begin{block}{Definition: $\mathbb{Q}$}
+        $\mathbb{Q} := \{[(a, b)] \mid (a, b) \in \mathbb{Z} \times (\mathbb{Z} \setminus \{0\})\}$. We define $\frac{a}{b} := [(a,b)]$.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Definition of $+$}
+    \begin{block}{Definition}
+        For $\frac{a}{b}, \frac{c}{d} \in \mathbb{Q}$ we define $\frac{a}{b} + \frac{c}{d} := \frac{ad+bc}{bd} = \frac{cb+ad}{db}=\frac{c}{d}+\frac{a}{b}$.
+    \end{block} 
+
+    \begin{block}{$+$ is well-defined}
+        Let $\frac{a}{b} = \frac{a'}{b'}$. Then for $\frac{c}{d} \in \mathbb{Q}$:\\
+        $bd(a'd+b'c) = ddba' + bb'cd = ddab' + bb'cd = b'd(ad+bc)$\\
+        $\Rightarrow \frac{a'}{b'} + \frac{c}{d} = \frac{a'd+b'c}{b'd} = \frac{ad+bc}{bd} = \frac{a}{b}+\frac{c}{d}$\\ 
+        $\newline$
+        By Symmetry invariance under changes of the right represenative follows.
+    \end{block}
+\end{frame}
+
+\begin{frame}{$(\mathbb{Q}, +)$ is an abelian group}
 \end{frame}
 
 \end{document}
