@@ -258,7 +258,7 @@
     \end{block}
 \end{frame}
 
-\begin{frame}{Definition of $+$}
+\begin{frame}{Definition of $+$$(\mathbb{Q}, +)$ is an abelian group}
     \begin{block}{Definition}
         For $\frac{a}{b}, \frac{c}{d} \in \mathbb{Q}$ we define $\frac{a}{b} + \frac{c}{d} := \frac{ad+bc}{bd} = \frac{cb+ad}{db}=\frac{c}{d}+\frac{a}{b}$.
     \end{block} 
@@ -273,6 +273,77 @@
 \end{frame}
 
 \begin{frame}{$(\mathbb{Q}, +)$ is an abelian group}
+    \begin{block}{Proposition}
+        $(\mathbb{Q}, +)$ is an abelian group
+    \end{block}
+
+    \begin{proof}
+    Associativity: $\forall \frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in \mathbb{Q}$: \\
+    $\frac{a}{b} + \underbrace{(\frac{c}{d} + \frac{e}{f})}_{= \frac{cf+de}{df}} = \frac{adf+bcf+bde}{bdf} = \underbrace{(\frac{a}{b} + \frac{c}{d})}_{=\frac{ad+bc}{bd}} + \frac{e}{f}$\\
+    $\newline$
+    Neutral Element: $\forall \frac{a}{b} \in \mathbb{Q}:$ \\
+    $\frac{0}{1}+\frac{a}{b}=\frac{a}{b}$ \\
+    $\newline$
+    Inverses: $\forall \frac{a}{b} \in \mathbb{Q}:$\\
+    $\frac{a}{b}+\frac{-a}{b} = \frac{ab-ab}{ab} = \frac{0}{1}$
+    \end{proof}
+\end{frame}
+
+\begin{frame}{$(\mathbb{Q} \setminus \{0\}, \cdot)$ is an abelian group}
+    \begin{block}{Definition}
+        For $\frac{a}{b}, \frac{c}{d} \in \mathbb{Q}$ we define: $\frac{a}{b} \cdot \frac{c}{d} := \frac{ac}{bd} = \frac{c}{d} \frac{a}{b}h$
+    \end{block}
+
+    \begin{block}{$\cdot$ is well-defined}
+        Let $\frac{a}{b}=\frac{a'}{b'}$. Then for $\frac{c}{d}$: \\
+        $ab'=ba' \Rightarrow ab'cd=ba'cd$\\
+        $\Rightarrow \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd} = \frac{a'c}{b'd} = \frac{a'}{b'} \cdot \frac{c}{d}$
+    \end{block}    
+\end{frame}
+
+\begin{frame}{$(\mathbb{Q} \setminus \{0\}, \cdot)$ is an abelian group}
+    \begin{block}{Proposition}
+        $(\mathbb{Q} \setminus \{0\}, \cdot)$ is an abelian group
+    \end{block}
+
+    \begin{proof}
+        Associativity: $\forall \frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in \mathbb{Q}\setminus \{0\}$: \\
+        $\frac{a}{b} \cdot (\frac{c}{d} \cdot \frac{e}{f})= \frac{ace}{bdf} = (\frac{a}{b} \cdot \frac{c}{d}) \cdot \frac{e}{f}$ \\
+        $\newline$
+        Neutral Element: $\forall \frac{a}{b} \in \mathbb{Q}$: \\
+        $\frac{a}{b} \cdot \frac{1}{1} = \frac{a}{b}$\\
+        $\newline$
+        Inverses: $\forall \frac{a}{b} \in \mathbb{Q}\setminus \{0\}$: \\
+        $\frac{a}{b} \cdot \frac{b}{a}= \frac{ab}{ab} = \frac{1}{1}$
+    \end{proof}
+\end{frame}
+
+\begin{frame}{$\mathbb{Q}$ is a field}
+    \begin{block}{Lemma}
+        $\mathbb{Q}$ is a field
+    \end{block}
+
+    \begin{proof}
+        Since $(\mathbb{Q}, +)$ and $(\mathbb{Q} \setminus \{0\}, \cdot)$ are abelian groups, we only need to show Distributivity.\\
+        Distributivity: Let $\frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in \mathbb{Q}$. Then: \\
+        $\frac{a}{b}\underbrace{(\frac{c}{d}+\frac{e}{f})}_{\frac{cf+de}{df}}= \frac{acf+ade}{bdf} = \frac{b(acf+dae)}{b dbf}= \frac{ac}{bd} + \frac{ae}{bf} =  \frac{a}{b}\frac{c}{d}+\frac{a}{b}\frac{e}{f}$
+    \end{proof}
+\end{frame}
+
+\begin{frame}{Embedding of $\mathbb{Z}$ into $\mathbb{Q}$}
+    \begin{block}{Definition}
+        The Map $\iota: \mathbb{Z} \rightarrow \mathbb{Q}, z \mapsto \frac{z}{1}$ is injective and compatible with $+, \cdot$.
+    \end{block}
+
+    \begin{proof}
+        Injective: Let $\frac{z}{1} = \frac{z'}{1}$. By Definition of $\sim$ we get $z=z'$.\\
+        Addition: $\forall z, z' \in \mathbb{Z}: \iota(z+z')=\frac{z+z'}{1}=\frac{z}{1}+\frac{z'}{1}=\iota(z)+\iota(z')$\\
+        Multiplication: $\forall z, z' \in \mathbb{Z}: \iota(zz') = \frac{zz'}{1}= \frac{z}{1}\frac{z'}{1}= \iota(z)\iota(z')$
+    \end{proof}
+
+    \begin{block}{Embedding of $\mathbb{Z}$}
+        We identify $\mathbb{Z}$ with the isomorphic set $\iota(\mathbb{Z}) \subset \mathbb{Q}$
+    \end{block}
 \end{frame}
 
 \end{document}
